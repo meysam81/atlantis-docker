@@ -5,7 +5,7 @@ FROM ghcr.io/runatlantis/atlantis:${ATLANTIS_VERSION}
 ARG TG_VERSION="v0.68.4"
 ARG TG_SHA256_SUM=""
 ARG INIT_SHARED_DIR=/plugins
-ARG TAC_VERSION="1.19.0" # without v
+ARG TAC_VERSION="v1.19.0"
 ARG TAC_SHA256_SUM=""
 
 ENV TG_FILE="${INIT_SHARED_DIR}/terragrunt"
