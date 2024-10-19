@@ -4,8 +4,11 @@ set -eux
 
 if [ "$(uname -m)" = "aarch64" ]; then
     ARCH="arm64"
-else
+elif [ "$(uname -m)" = "x86_64" ]; then
     ARCH="amd64"
+else
+    echo "Unsupported architecture"
+    exit 1
 fi
 
 wget https://github.com/gruntwork-io/terragrunt/releases/download/v${TG_VERSION}/terragrunt_linux_${ARCH}
