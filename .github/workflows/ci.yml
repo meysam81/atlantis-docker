@@ -21,3 +21,4 @@ jobs:
         uses: meysam81/infra/actions/build-docker@main
         with:
           image-name: ghcr.io/meysam81/atlantis
+          image-extra-tags: ghcr.io/meysam81/atlantis:${{ github.run_id }}

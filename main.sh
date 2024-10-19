@@ -10,7 +10,7 @@ else
     ARCH="amd64"
 fi
 
-wget https://github.com/gruntwork-io/terragrunt/releases/download/v${TG_VERSION}/terragrunt_linux_${ARCH} -O "${TG_FILE}"
+wget https://github.com/gruntwork-io/terragrunt/releases/download/v${TG_VERSION}/terragrunt_linux_${ARCH}
 wget "https://github.com/transcend-io/terragrunt-atlantis-config/releases/download/v${TAC_VERSION}/terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}"
 
 if [ -z "${TG_SHA256_SUM}"]; then
@@ -21,12 +21,12 @@ if [ -z "${TAC_SHA256_SUM}"]; then
     TAC_SHA256_SUM=$(wget -qO- https://github.com/transcend-io/terragrunt-atlantis-config/releases/download/v${TAC_VERSION}/SHA256SUMS | grep "terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" | awk '{print $1}')
 fi
 
-echo "${TG_SHA256_SUM} ${TG_FILE}_linux_${ARCH}" | sha256sum -c
+echo "${TG_SHA256_SUM} terragrunt_linux_${ARCH}" | sha256sum -c
+mv "terragrunt_linux_${ARCH}" "${TG_FILE}"
 chmod 755 "${TG_FILE}"
-terragrunt -v
+${TG_FILE} -v
 
 echo "${TAC_SHA256_SUM}  terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" | sha256sum -c
-cp -fv "terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" "${TAC_FILE}"
+mv "terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" "${TAC_FILE}"
 chmod 755 "${TAC_FILE}"
-
-terragrunt-atlantis-config version
+${TAC_FILE} version
