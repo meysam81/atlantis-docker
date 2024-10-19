@@ -10,11 +10,7 @@ LABEL terragrunt_version=${TG_VERSION}
 LABEL terragrunt_atlantis_config_version=${TAC_VERSION}
 
 ARG TG_SHA256_SUM=""
-ARG INIT_SHARED_DIR=/plugins
 ARG TAC_SHA256_SUM=""
-
-ENV TG_FILE="${INIT_SHARED_DIR}/terragrunt"
-ENV TAC_FILE="${INIT_SHARED_DIR}/terragrunt-atlantis-config"
 
 COPY main.sh /
 

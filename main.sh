@@ -2,8 +2,6 @@
 
 set -eux
 
-mkdir -p ${INIT_SHARED_DIR}
-
 if [ "$(uname -m)" = "aarch64" ]; then
     ARCH="arm64"
 else
@@ -22,11 +20,11 @@ if [ -z "${TAC_SHA256_SUM}"]; then
 fi
 
 echo "${TG_SHA256_SUM} terragrunt_linux_${ARCH}" | sha256sum -c
-mv "terragrunt_linux_${ARCH}" "${TG_FILE}"
-chmod 755 "${TG_FILE}"
-${TG_FILE} -v
+mv "terragrunt_linux_${ARCH}" /usr/local/bin/terragrunt
+chmod 755 /usr/local/bin/terragrunt
+terragrunt -v
 
 echo "${TAC_SHA256_SUM}  terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" | sha256sum -c
-mv "terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" "${TAC_FILE}"
-chmod 755 "${TAC_FILE}"
-${TAC_FILE} version
+mv "terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" /usr/local/bin/terragrunt-atlantis-config
+chmod 755 /usr/local/bin/terragrunt-atlantis-config
+terragrunt-atlantis-config version
