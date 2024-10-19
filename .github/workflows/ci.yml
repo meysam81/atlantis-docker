@@ -12,6 +12,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-edge:
     if: contains(fromJson('["push","pull_request"]'), github.event_name)
