@@ -67,6 +67,7 @@ jobs:
 
   build-stable:
     needs: release-please
+    if: needs.release-please.outputs.releases_created == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Build docker
