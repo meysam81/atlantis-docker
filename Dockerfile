@@ -15,5 +15,9 @@ ARG TAC_SHA256_SUM=""
 COPY main.sh /
 
 USER root
-RUN /main.sh && rm /main.sh
+RUN apk update && \
+    apk upgrade && \
+    rm -rf /var/cache/apk/* && \
+    /main.sh && \
+    rm /main.sh
 USER atlantis:atlantis
