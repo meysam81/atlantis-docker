@@ -42,18 +42,18 @@ mv "terragrunt_linux_${ARCH}" /usr/local/bin/terragrunt
 chmod 755 /usr/local/bin/terragrunt
 terragrunt -v
 
-echo "${TAC_SHA256_SUM}  terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" | sha256sum -c
+echo "${TAC_SHA256_SUM} terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" | sha256sum -c
 mv "terragrunt-atlantis-config_${TAC_VERSION}_linux_${ARCH}" /usr/local/bin/terragrunt-atlantis-config
 chmod 755 /usr/local/bin/terragrunt-atlantis-config
 terragrunt-atlantis-config version
 
-echo "${ATLANTIS_SHA256_SUM}  atlantis_linux_${ARCH}.zip" | sha256sum -c
+echo "${ATLANTIS_SHA256_SUM} atlantis_linux_${ARCH}.zip" | sha256sum -c
 unzip "atlantis_linux_${ARCH}.zip"
 mv atlantis /usr/local/bin/atlantis
 chmod 755 /usr/local/bin/atlantis
 atlantis version
 
-echo "${TOFU_SHA256_SUM}  tofu_${TOFU_VERSION}_linux_${ARCH}.tar.gz" | sha256sum -c
+echo "${TOFU_SHA256_SUM} tofu_${TOFU_VERSION}_linux_${ARCH}.tar.gz" | sha256sum -c
 tar -xvf "tofu_${TOFU_VERSION}_linux_${ARCH}.tar.gz"
 mv tofu /usr/local/bin/tofu
 chmod 755 /usr/local/bin/tofu
