@@ -50,11 +50,6 @@
       "versioningTemplate": "semver"
     }
   ],
-  "dockerfile": {
-    "fileMatch": [
-      "(^|/)Dockerfile$"
-    ]
-  },
   "extends": [
     "config:recommended"
   ]
