@@ -1,6 +1,65 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "{{depName}}",
+      "fileMatch": [
+        "(^|/)Dockerfile$"
+      ],
+      "matchStrings": [
+        "ARG (?<packageName>ATLANTIS|TG|TAC|TOFU)_VERSION=\"?(?<currentValue>[^\"]+)\"?"
+      ],
+      "versioningTemplate": "semver"
+    }
+  ],
+  "dockerfile": {
+    "fileMatch": [
+      "(^|/)Dockerfile$"
+    ]
+  },
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "extractVersion": "^v?(?<version>.+)$",
+      "extractVersionLogic": "dockerfileArg",
+      "matchFileNames": [
+        "**/Dockerfile"
+      ],
+      "matchPackageNames": [
+        "atlantis",
+        "terragrunt",
+        "terragrunt-atlantis-config",
+        "tofu"
+      ],
+      "versioning": "loose"
+    },
+    {
+      "depNameTemplate": "ATLANTIS",
+      "packageNames": [
+        "runatlantis/atlantis"
+      ]
+    },
+    {
+      "depNameTemplate": "TG",
+      "packageNames": [
+        "gruntwork-io/terragrunt"
+      ]
+    },
+    {
+      "depNameTemplate": "TAC",
+      "packageNames": [
+        "m13253/terragrunt-atlantis-config"
+      ]
+    },
+    {
+      "depNameTemplate": "TOFU",
+      "packageNames": [
+        "opentofu/opentofu"
+      ]
+    }
   ]
 }

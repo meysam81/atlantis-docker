@@ -1,4 +1,3 @@
-
 FROM curlimages/curl AS bins
 
 ARG ATLANTIS_VERSION="v0.30.0"
