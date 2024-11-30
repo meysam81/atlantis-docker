@@ -28,7 +28,7 @@
     {
       "customType": "regex",
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "m13253/terragrunt-atlantis-config",
+      "depNameTemplate": "transcend-io/terragrunt-atlantis-config",
       "fileMatch": [
         "(^|/)Dockerfile$"
       ],
