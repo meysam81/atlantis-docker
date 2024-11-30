@@ -4,12 +4,48 @@
     {
       "customType": "regex",
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "{{depName}}",
+      "depNameTemplate": "runatlantis/atlantis",
       "fileMatch": [
         "(^|/)Dockerfile$"
       ],
       "matchStrings": [
-        "ARG (?<packageName>ATLANTIS|TG|TAC|TOFU)_VERSION=\"?(?<currentValue>[^\"]+)\"?"
+        "ARG ATLANTIS_VERSION=\"?(?<currentValue>[^\"]+)\"?"
+      ],
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "gruntwork-io/terragrunt",
+      "fileMatch": [
+        "(^|/)Dockerfile$"
+      ],
+      "matchStrings": [
+        "ARG TG_VERSION=\"?(?<currentValue>[^\"]+)\"?"
+      ],
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "m13253/terragrunt-atlantis-config",
+      "fileMatch": [
+        "(^|/)Dockerfile$"
+      ],
+      "matchStrings": [
+        "ARG TAC_VERSION=\"?(?<currentValue>[^\"]+)\"?"
+      ],
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "opentofu/opentofu",
+      "fileMatch": [
+        "(^|/)Dockerfile$"
+      ],
+      "matchStrings": [
+        "ARG TOFU_VERSION=\"?(?<currentValue>[^\"]+)\"?"
       ],
       "versioningTemplate": "semver"
     }
@@ -21,43 +57,5 @@
   },
   "extends": [
     "config:recommended"
-  ],
-  "packageRules": [
-    {
-      "matchFileNames": [
-        "**/Dockerfile"
-      ],
-      "matchPackageNames": [
-        "atlantis",
-        "terragrunt",
-        "terragrunt-atlantis-config",
-        "tofu"
-      ],
-      "versioning": "loose"
-    },
-    {
-      "depNameTemplate": "ATLANTIS",
-      "packageNames": [
-        "runatlantis/atlantis"
-      ]
-    },
-    {
-      "depNameTemplate": "TG",
-      "packageNames": [
-        "gruntwork-io/terragrunt"
-      ]
-    },
-    {
-      "depNameTemplate": "TAC",
-      "packageNames": [
-        "m13253/terragrunt-atlantis-config"
-      ]
-    },
-    {
-      "depNameTemplate": "TOFU",
-      "packageNames": [
-        "opentofu/opentofu"
-      ]
-    }
   ]
 }
