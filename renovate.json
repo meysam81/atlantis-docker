@@ -25,7 +25,6 @@
   "packageRules": [
     {
       "extractVersion": "^v?(?<version>.+)$",
-      "extractVersionLogic": "dockerfileArg",
       "matchFileNames": [
         "**/Dockerfile"
       ],
