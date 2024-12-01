@@ -6,8 +6,8 @@ Atlantis docker image with Terragrunt CLI installed.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Atlantis Docker](#atlantis-docker)
-  - [Introduction](#introduction)
-  - [Prerequisites](#prerequisites)
+  - [🌟 Overview](#-overview)
+  - [🚀 Key Features](#-key-features)
   - [Usage](#usage)
   - [Configuration](#configuration)
   - [Contributing](#contributing)
@@ -15,20 +15,38 @@ Atlantis docker image with Terragrunt CLI installed.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Introduction
+## 🌟 Overview
 
-This repository provides a Docker image for
-[Atlantis](https://www.runatlantis.io/) with
-[Terragrunt](https://terragrunt.gruntwork.io/) CLI installed.
+This Docker image provides a comprehensive, lightweight, and secure solution
+for running Atlantis with additional infrastructure-as-code (IaC) tools.
 
-Atlantis is a tool for automating OpenTofu/Terraform workflows and Terragrunt
-is a thin wrapper for OpenTofu that provides extra tools for keeping
-configurations DRY and managing remote state.
+It combines Atlantis, OpenTofu, Terragrunt, and Terragrunt Atlantis Config into
+a single, streamlined container, making infrastructure management and
+automation seamless.
 
-## Prerequisites
+## 🚀 Key Features
 
-- Docker installed on your machine.
-- Basic knowledge of OpenTofu and Terragrunt.
+- **Multi-Tool Integration**: Includes:
+
+  - Atlantis (Terraform Pull Request Automation)
+  - OpenTofu (Open Source Terraform Alternative)
+  - Terragrunt (Terraform Wrapper)
+  - Terragrunt Atlantis Config (Terragrunt Configuration Generator)
+
+- **Architecture Support**:
+
+  - Compatible with `arm64` and `amd64` architectures
+  - Dynamically detects and configures based on system architecture
+
+- **Security-Focused**:
+
+  - Uses distroless base image for minimal attack surface
+  - Implements SHA256 checksum verification for all downloaded binaries
+  - Runs with non-root permissions
+
+- **Version Flexibility**:
+  - Configurable versions for each tool via build arguments
+  - Easy to upgrade or pin to specific versions
 
 ## Usage
 
