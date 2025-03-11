@@ -45,9 +45,6 @@ jobs:
         with:
           image-name: ghcr.io/meysam81/atlantis
           kubescape: true
-          scout-comment-pr: true
-          scout-compare: true
-          scout-cves: true
 
   semantic-release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
