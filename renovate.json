@@ -53,6 +53,9 @@
   "extends": [
     "config:recommended"
   ],
+  "minor": {
+    "automerge": true
+  },
   "packageRules": [
     {
       "automerge": true,
@@ -63,5 +66,11 @@
         "digest"
       ]
     }
-  ]
+  ],
+  "patch": {
+    "automerge": true
+  },
+  "pin": {
+    "automerge": true
+  }
 }
