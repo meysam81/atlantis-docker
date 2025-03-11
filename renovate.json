@@ -52,5 +52,16 @@
   ],
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "automerge": true,
+      "automergeStrategy": "rebase",
+      "matchUpdateTypes": [
+        "patch",
+        "pin",
+        "digest"
+      ]
+    }
   ]
 }
