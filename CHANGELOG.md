@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/meysam81/atlantis-docker/compare/v0.2.0...v0.2.1) (2025-03-11)
+
+
+### Bug Fixes
+
+* **CI:** remove scout from build-pr ([9228065](https://github.com/meysam81/atlantis-docker/commit/9228065317303b7556f4da52975b42b0376d15ad))
+
 # [0.2.0](https://github.com/meysam81/atlantis-docker/compare/v0.1.2...v0.2.0) (2025-03-11)
 
 
