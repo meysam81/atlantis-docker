@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "automerge": true,
   "customManagers": [
     {
       "customType": "regex",
@@ -50,8 +51,12 @@
       "versioningTemplate": "semver"
     }
   ],
+  "digest": {
+    "automerge": true
+  },
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "packages:linters"
   ],
   "minor": {
     "automerge": true
