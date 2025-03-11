@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/meysam81/atlantis-docker/compare/v0.2.1...v0.2.2) (2025-03-11)
+
+
+### Bug Fixes
+
+* ensure automerge is true for all ([73371b1](https://github.com/meysam81/atlantis-docker/commit/73371b1d82243c15b45f763144441804846b2b85))
+
 ## [0.2.1](https://github.com/meysam81/atlantis-docker/compare/v0.2.0...v0.2.1) (2025-03-11)
 
 
