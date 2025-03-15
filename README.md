@@ -1,5 +1,12 @@
 # Atlantis Docker
 
+[![GitHub Release](https://img.shields.io/github/v/release/meysam81/atlantis-docker)](https://github.com/meysam81/atlantis-docker/releases/latest)
+[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://developer.mend.io/github/meysam81/atlantis-docker)
+[![GitHub last commit](https://img.shields.io/github/last-commit/meysam81/atlantis-docker)](https://github.com/meysam81/atlantis-docker/commits/main)
+[![License](https://img.shields.io/github/license/meysam81/atlantis-docker)](https://github.com/meysam81/atlantis-docker/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/meysam81/atlantis-docker)](https://github.com/meysam81/atlantis-docker/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/meysam81/atlantis-docker)](https://github.com/meysam81/atlantis-docker/pulls)
+
 Atlantis docker image with Terragrunt CLI installed.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
