@@ -1,8 +1,12 @@
 FROM curlimages/curl AS bins
 
+# renovate: github=runatlantis/atlantis
 ARG ATLANTIS_VERSION="v0.33.0"
+# renovate: github=gruntwork-io/terragrunt
 ARG TG_VERSION="0.75.10"
+# renovate: github=transcend-io/terragrunt-atlantis-config
 ARG TAC_VERSION="1.20.0"
+# renovate: github=opentofu/opentofu
 ARG TOFU_VERSION="1.9.0"
 
 ARG TG_SHA256_SUM=""
