@@ -26,7 +26,7 @@ COPY main.sh /
 RUN /main.sh && \
     rm /main.sh
 
-FROM debian:12-slim AS git-deps
+FROM debian:13-slim AS git-deps
 RUN apt-get update && \
     apt-get install -y git && \
     mkdir -p /git-deps && \
