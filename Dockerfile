@@ -1,4 +1,4 @@
-FROM curlimages/curl AS bins
+FROM curlimages/curl@sha256:3fb7e13e5d179a845c97d78204f3f1064d1907037f26a3ebf91710571151fd93 AS bins
 
 # renovate: github=runatlantis/atlantis
 ARG ATLANTIS_VERSION="v0.33.0"
@@ -26,7 +26,7 @@ COPY main.sh /
 RUN /main.sh && \
     rm /main.sh
 
-FROM debian:12-slim AS git-deps
+FROM debian:12-slim@sha256:e67eeead736ff7bbe258ef088bff683635c561b1fcfefad0806c1df4ab49ce0e AS git-deps
 RUN apt-get update && \
     apt-get install -y git && \
     mkdir -p /git-deps && \
@@ -34,7 +34,7 @@ RUN apt-get update && \
     ldd $(which git) | grep "=> /" | awk '{print $3}' | xargs -I '{}' cp -v '{}' /git-deps/ && \
     cp -r /usr/lib/git-core /git-deps/
 
-FROM gcr.io/distroless/base-nossl-debian12:nonroot
+FROM gcr.io/distroless/base-nossl-debian12:nonroot@sha256:be40c00dfabd86576d92666e87e406714d5618342de1a0c213ad232de255172e
 
 COPY --from=bins /usr/local/bin/atlantis /usr/local/bin/atlantis
 COPY --from=bins /usr/local/bin/tofu /usr/local/bin/tofu
